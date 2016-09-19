@@ -87,6 +87,7 @@ func generateQuestions() {
 	return
 }
 
+// implement generateCnToEnExamination as follows.
 func generateEnToCnExamination() Examination {
 	var e Examination
 
@@ -109,6 +110,38 @@ func generateEnToCnExamination() Examination {
 			}
 			other := r.Intn(totalWords)
 			e.Questions[i].Options[j] = cOptionPrefixes[j] + words[other].cnWord
+		}
+
+		//sort.Sort(e.Questions[i].Options)
+
+		fmt.Println(i, e.Questions[i].Subject, e.Questions[i].Options[0], e.Questions[i].Options[1], e.Questions[i].Options[2], e.Questions[i].Options[3], e.Questions[i].Answer)
+	}
+
+	return e
+}
+
+func generateCnToEnExamination() Examination {
+	var e Examination
+
+	r := rand.New(rand.NewSource(time.Now().UnixNano()))
+
+	for i := 0; i < cQuestionNum; i++ {
+		no := r.Intn(totalWords)
+		e.Questions[i].Subject = words[no].cnWord
+
+		//e.Questions[i].Options[0] = words[no].cnWord
+
+		answerPos := r.Intn(4)
+		e.Questions[i].Answer = answerPos
+		e.Questions[i].Options[answerPos] = words[no].enWord
+
+		for j := 0; j < 4; j++ {
+			if j == answerPos {
+				e.Questions[i].Options[j] = cOptionPrefixes[j] + e.Questions[i].Options[j]
+				continue
+			}
+			other := r.Intn(totalWords)
+			e.Questions[i].Options[j] = cOptionPrefixes[j] + words[other].enWord
 		}
 
 		//sort.Sort(e.Questions[i].Options)
@@ -142,8 +175,11 @@ func generatePaper() error {
 			// generate questions.
 			generateQuestions()
 		case "e":
-			fmt.Println("generate a new examination as follows.")
+			fmt.Println("generate a new en to cn examination as follows.")
 			generateEnToCnExamination()
+		case "f":
+			fmt.Println("generate a new cn to en examination as follows.")
+			generateCnToEnExamination()
 		default:
 			fmt.Println("your input is wrong. please enter q, e or g to go on.")
 		}
