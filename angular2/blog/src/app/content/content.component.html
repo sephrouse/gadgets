@@ -1,0 +1,17 @@
+<div class="animate mdl-grid portfolio-max-width">
+    <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">{{blog.title}}</h2>
+        </div>
+        <div class="mdl-grid portfolio-copy">
+            <div class="mdl-cell mdl-cell--12-col mdl-card__supporting-text no-padding ">
+                <p *ngFor="let paragraph of blog.content">
+                   {{paragraph}}
+                </p>
+            </div>
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" (click)="goBack()">后退</button>
+        </div>
+    </div>
+</div>

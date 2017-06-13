@@ -1,0 +1,343 @@
+/* You can add global styles to this file, and also import other style files */
+.overlay-loader {
+	display: block;
+	margin: auto;
+	width: 97px;
+	height: 97px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+.loader {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	width: 97px;
+	height: 97px;
+	animation-name: rotateAnim;
+		-o-animation-name: rotateAnim;
+		-ms-animation-name: rotateAnim;
+		-webkit-animation-name: rotateAnim;
+		-moz-animation-name: rotateAnim;
+	animation-duration: 0.4s;
+		-o-animation-duration: 0.4s;
+		-ms-animation-duration: 0.4s;
+		-webkit-animation-duration: 0.4s;
+		-moz-animation-duration: 0.4s;
+	animation-iteration-count: infinite;
+		-o-animation-iteration-count: infinite;
+		-ms-animation-iteration-count: infinite;
+		-webkit-animation-iteration-count: infinite;
+		-moz-animation-iteration-count: infinite;
+	animation-timing-function: linear;
+		-o-animation-timing-function: linear;
+		-ms-animation-timing-function: linear;
+		-webkit-animation-timing-function: linear;
+		-moz-animation-timing-function: linear;
+}
+.loader div {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	border: 1px solid rgb(0,0,0);
+	position: absolute;
+	top: 2px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+.loader div:nth-child(odd) {
+	border-top: none;
+	border-left: none;
+}
+.loader div:nth-child(even) {
+	border-bottom: none;
+	border-right: none;
+}
+.loader div:nth-child(2) {
+	border-width: 2px;
+	left: 0px;
+	top: -4px;
+	width: 12px;
+	height: 12px;
+}
+.loader div:nth-child(3) {
+	border-width: 2px;
+	left: -1px;
+	top: 3px;
+	width: 18px;
+	height: 18px;
+}
+.loader div:nth-child(4) {
+	border-width: 3px;
+	left: -1px;
+	top: -4px;
+	width: 23px;
+	height: 23px;
+}
+.loader div:nth-child(5) {
+	border-width: 3px;
+	left: -1px;
+	top: 4px;
+	width: 31px;
+	height: 31px;
+}
+.loader div:nth-child(6) {
+	border-width: 4px;
+	left: 0px;
+	top: -4px;
+	width: 39px;
+	height: 39px;
+}
+.loader div:nth-child(7) {
+	border-width: 4px;
+	left: 0px;
+	top: 6px;
+	width: 49px;
+	height: 49px;
+}
+
+
+@keyframes rotateAnim {
+	from {
+		transform: rotate(360deg);
+	}
+	to {
+		transform: rotate(0deg);
+	}
+}
+
+@-o-keyframes rotateAnim {
+	from {
+		-o-transform: rotate(360deg);
+	}
+	to {
+		-o-transform: rotate(0deg);
+	}
+}
+
+@-ms-keyframes rotateAnim {
+	from {
+		-ms-transform: rotate(360deg);
+	}
+	to {
+		-ms-transform: rotate(0deg);
+	}
+}
+
+@-webkit-keyframes rotateAnim {
+	from {
+		-webkit-transform: rotate(360deg);
+	}
+	to {
+		-webkit-transform: rotate(0deg);
+	}
+}
+
+@-moz-keyframes rotateAnim {
+	from {
+		-moz-transform: rotate(360deg);
+	}
+	to {
+		-moz-transform: rotate(0deg);
+	}
+}
+
+.animate {
+	-webkit-animation: cssAnimation 0.456s 1 ease;
+	-moz-animation: cssAnimation 0.456s 1 ease;
+	-o-animation: cssAnimation 0.456s 1 ease;
+}
+@-webkit-keyframes cssAnimation {
+	from { -webkit-transform: rotate(0deg) scale(0.955) skew(0deg) translate(0px); }
+	to { -webkit-transform: rotate(0deg) scale(1.0) skew(0deg) translate(0px); }
+}
+@-moz-keyframes cssAnimation {
+	from { -moz-transform: rotate(0deg) scale(0.955) skew(0deg) translate(0px); }
+	to { -moz-transform: rotate(0deg) scale(1.0) skew(0deg) translate(0px); }
+}
+@-o-keyframes cssAnimation {
+	from { -o-transform: rotate(0deg) scale(0.955) skew(0deg) translate(0px); }
+	to { -o-transform: rotate(0deg) scale(1.0) skew(0deg) translate(0px); }
+}
+
+.portfolio-header {
+  position: relative;
+  background-image: url(assets/images/header-bg.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.portfolio-header .mdl-layout__header-row {
+  padding: 0;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.mdl-layout__title {
+  font-size: 14px;
+  text-align: center;
+  font-weight: 300;
+	color: #ffffff;
+}
+
+.is-compact .mdl-layout__title span {
+  display: none;
+}
+
+.portfolio-logo-row {
+  min-height: 200px;
+}
+
+.is-compact .portfolio-logo-row {
+  min-height: auto;
+}
+
+.portfolio-logo {
+  background: url(assets/images/logo.png) 50% no-repeat;
+  background-size: cover;
+  height: 150px;
+  width: 150px;
+  margin: auto auto 10px;
+}
+
+.is-compact .portfolio-logo {
+  height: 50px;
+  width: 50px;
+  margin-top: 7px;
+}
+
+.portfolio-navigation-row {
+  background-color: rgba(0, 0, 0, 0.08);
+  text-transform: uppercase;
+  height: 45px;
+}
+
+.portfolio-navigation-row  .mdl-navigation {
+  text-align: center;
+  max-width: 900px;
+  width: 100%;
+}
+
+.portfolio-navigation-row .mdl-navigation__link {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  line-height: 42px;
+	color: #ffffff;
+}
+
+.portfolio-header .mdl-layout__drawer-button {
+    background-color: rgba(197, 197, 197, 0.44);
+}
+
+.portfolio-navigation-row .is-active {
+  position: relative;
+  font-weight: bold;
+}
+
+.portfolio-navigation-row .is-active:after {
+  content: "";
+  width: 70%;
+  height: 2px;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(255,64,129);
+  left: 15%;
+}
+
+.portfolio-card .mdl-card__title {
+  padding-bottom: 0;
+}
+
+.portfolio-blog-card-compact .mdl-card__title {
+  padding-bottom: 0;
+}
+
+.portfolio-blog-card-bg > .mdl-card__actions {
+  height: 52px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+img.article-image {
+  width: 100%;
+  height: auto;
+}
+
+.portfolio-max-width {
+  max-width: 900px;
+  margin: auto;
+}
+
+.portfolio-copy {
+  max-width: 700px;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.no-left-padding{
+  padding-left: 0;
+}
+
+.no-bottom-padding {
+  padding-bottom: 0;
+}
+
+.padding-top {
+  padding: 10px 0 0;
+}
+
+.portfolio-share-btn {
+  position: relative;
+  float: right;
+  top: -4px;
+}
+
+.demo-card-event > .mdl-card__actions {
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    box-sizing: border-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.portfolio-contact .mdl-textfield {
+  width: 100%;
+}
+
+.portfolio-contact form {
+  max-width: 550px;
+  margin: auto;
+}
+
+footer {
+  background-image: url(assets/images/footer-background.png);
+  background-size: cover;
+	padding-right: 0px;
+	width: 100%;
+	position: inherit;
+	bottom: 0;
+}
+
+.portfolio-card .mdl-card__supporting-text {
+	height: 90px;
+}
+/*
+.portfolio-card .mdl-card__supporting-text::after {
+	content: "...";
+	padding-bottom: 20px;
+}*/

@@ -1,0 +1,17 @@
+<div class="animate mdl-grid portfolio-max-width">
+    <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card" *ngFor="let item of blogs">
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">{{ item.title }}</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+            <div *ngFor="let paragraph of item.content">
+                {{paragraph}}
+            </div>
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+            <!--<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" routerLink="/content/{{item.createdDate}}">Read more</a>-->
+            <!--<button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" (click)="readMore(item)">阅读</button>-->
+            <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" routerLink="/content/{{item.$key}}">阅读</button>
+        </div>
+    </div>
+</div>

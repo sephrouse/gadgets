@@ -1,0 +1,35 @@
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header mdl-layout__header--waterfall portfolio-header">
+        <div class="mdl-layout__header-row portfolio-logo-row">
+            <span class="mdl-layout__title">
+                <div class="portfolio-logo"></div>
+                <span class="mdl-layout__title">Guenhwyvar, Icingdeath and Twinkle</span>
+            </span>
+        </div>
+        <div class="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only">
+            <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
+                <a class="mdl-navigation__link" routerLink="/list" routerLinkActive="is-active">博客</a>
+                <a class="mdl-navigation__link" routerLink="/newblog" routerLinkActive="is-active">新博客</a>
+                <a class="mdl-navigation__link" routerLink="/about" routerLinkActive="is-active">关于我</a>
+                <a class="mdl-navigation__link" routerLink="/contact" routerLinkActive="is-active">联系方式</a>
+            </nav>
+        </div>
+    </header>
+    <div class="mdl-layout__drawer mdl-layout--small-screen-only">
+        <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
+            <a class="mdl-navigation__link" routerLink="/list" routerLinkActive="is-active">博客</a>
+            <a class="mdl-navigation__link" routerLink="/newblog" routerLinkActive="is-active">新博客</a>
+            <a class="mdl-navigation__link" routerLink="/about" routerLinkActive="is-active">关于我</a>
+            <a class="mdl-navigation__link" routerLink="/contact" routerLinkActive="is-active">联系方式</a>
+        </nav>
+    </div>
+    <main class="mdl-layout__content">
+        <router-outlet></router-outlet>
+        <footer class="mdl-mini-footer">
+            <div class="mdl-mini-footer__left-section">
+                <div class="mdl-logo">All Rights Reserved.</div>
+            </div>
+            <div class="mdl-mini-footer__right-section">For kind-hearted Drizzt.</div>
+        </footer>
+    </main>
+</div>

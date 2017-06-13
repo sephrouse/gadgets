@@ -1,0 +1,40 @@
+<div class="animate mdl-grid portfolio-max-width portfolio-contact" *ngIf="verified === false">
+    <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">验证</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+            <form (submit)="verify(ctrl.value)">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded" (click)="whichElement = 'cmd'" [ngClass]="{'is-focused': whichElement==='cmd', 'is-dirty': ctrl.value}">
+                    <input class="mdl-textfield__input" type="text" id="Cmd" #ctrl required>
+                    <label class="mdl-textfield__label" for="Cmd">验证信息...</label>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="animate mdl-grid portfolio-max-width portfolio-contact" *ngIf="verified === true">
+    <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">新博客</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+            <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded" (click)="whichElement = 'title'" [ngClass]="{'is-focused': whichElement==='title', 'is-dirty': title.value}">
+                    <input class="mdl-textfield__input" type="text" id="Title" name="title" #title="ngModel" ngModel>
+                    <label class="mdl-textfield__label" for="Name">标题...</label>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-upgraded" (click)="whichElement = 'content'" [ngClass]="{'is-focused': whichElement==='content', 'is-dirty': content.value}">
+                    <textarea class="mdl-textfield__input" type="text" rows="30" id="Content" name="content" #content="ngModel" ngModel></textarea>
+                    <label class="mdl-textfield__label" for="note">博客内容</label>
+                </div>
+                <p>
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">
+                    创建
+                    </button>
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
